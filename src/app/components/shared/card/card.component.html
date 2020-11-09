@@ -1,0 +1,11 @@
+<div class="card-columns">
+  <div (click)="item.type !== 'album' && goToItem(item)" *ngFor="let item of items" class="card cursorPointer">
+      <img [src]="item.images | noimage" class="card-img-top" alt="item image">
+      <div class="card-body">
+        <h5 class="card-title">{{ item.name }} <small *ngIf="item.album_type">- {{ item.album_type | titlecase }}</small></h5>
+        <p class="card-text">
+          <a (click)="goToItem(artist)" *ngFor="let artist of item.artists" class="badge badge-pill badge-warning puntero">{{ artist.name }}</a>
+        </p>
+      </div>
+  </div>
+</div>
